@@ -15,6 +15,12 @@
   filter: saturate(0.85);
 }
 
+@media (max-width: 899px) {
+  .photo {
+    background-image: url('/gemifotomobil.avif');
+  }
+}
+
 .scrim {
   position: absolute;
   inset: 0;

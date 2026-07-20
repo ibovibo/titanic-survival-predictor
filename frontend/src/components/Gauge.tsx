@@ -21,7 +21,7 @@ export function Gauge({ percent, isLoading }: Props) {
 
   return (
     <div className={`${styles.wrap} ${isLoading ? styles.pulsing : ''}`}>
-      <svg className={styles.svg} width={SIZE} height={SIZE}>
+      <svg className={styles.svg} width={SIZE} height={SIZE} viewBox={`0 0 ${SIZE} ${SIZE}`}>
         <circle className={styles.track} cx={SIZE / 2} cy={SIZE / 2} r={RADIUS} />
         <circle
           className={styles.glow}
