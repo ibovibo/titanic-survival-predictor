@@ -1,0 +1,22 @@
+.layer {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.photo {
+  position: absolute;
+  inset: 0;
+  background-image: url('/gemifoto.avif');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  filter: saturate(0.85);
+}
+
+.scrim {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(6, 13, 20, 0.1) 0%, rgba(6, 13, 20, 0.22) 100%);
+}

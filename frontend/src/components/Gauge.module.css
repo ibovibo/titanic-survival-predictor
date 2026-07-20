@@ -1,0 +1,74 @@
+.wrap {
+  position: relative;
+  width: 220px;
+  height: 220px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.svg {
+  transform: rotate(-90deg);
+}
+
+.track {
+  fill: none;
+  stroke: var(--color-border-strong);
+  stroke-width: 14;
+}
+
+.glow {
+  fill: none;
+  stroke-width: 14;
+  stroke-linecap: round;
+  opacity: 0.25;
+  filter: blur(14px);
+  transition: stroke-dashoffset 300ms ease-out, stroke 300ms ease-out;
+}
+
+.progress {
+  fill: none;
+  stroke-width: 14;
+  stroke-linecap: round;
+  transition: stroke-dashoffset 300ms ease-out, stroke 300ms ease-out;
+}
+
+.pulsing .progress {
+  animation: pulse 1.4s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.45;
+  }
+}
+
+.center {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+}
+
+.percent {
+  font-family: var(--font-serif);
+  font-size: 44px;
+  font-weight: 600;
+  color: var(--color-text);
+  text-shadow: var(--text-shadow-photo);
+  line-height: 1;
+}
+
+.percentDash {
+  font-family: var(--font-serif);
+  font-size: 44px;
+  font-weight: 600;
+  color: var(--color-text-faint);
+  text-shadow: var(--text-shadow-photo);
+  line-height: 1;
+}

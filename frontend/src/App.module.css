@@ -1,0 +1,62 @@
+.page {
+  /* Establishes a stacking context so this in-flow content paints above the
+     fixed background video layer — a static sibling would otherwise lose to
+     any positioned element regardless of DOM order. */
+  position: relative;
+  z-index: 1;
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 32px 24px 0;
+}
+
+.header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 36px;
+}
+
+.titleGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.title {
+  font-size: 32px;
+  text-shadow: 0 2px 20px rgba(0, 0, 0, 0.65), 0 1px 4px rgba(0, 0, 0, 0.5);
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: 1fr 360px;
+  align-items: start;
+  gap: 32px;
+}
+
+.resultColumn {
+  position: sticky;
+  top: 32px;
+}
+
+@media (max-width: 899px) {
+  .page {
+    padding-bottom: 280px;
+  }
+
+  .layout {
+    grid-template-columns: 1fr;
+  }
+
+  .resultColumn {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: auto;
+    z-index: 20;
+    padding: 0 16px 16px;
+    background: linear-gradient(to top, var(--color-bg) 70%, transparent);
+  }
+}

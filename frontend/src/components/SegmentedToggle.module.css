@@ -1,0 +1,59 @@
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.label {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--color-label);
+  text-shadow: var(--text-shadow-photo);
+  letter-spacing: 0.02em;
+}
+
+.track {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background: var(--color-surface-sunken);
+  -webkit-backdrop-filter: var(--card-backdrop-filter);
+  backdrop-filter: var(--card-backdrop-filter);
+  border: 1px solid var(--color-border);
+  border-radius: 999px;
+  padding: 4px;
+}
+
+.thumb {
+  position: absolute;
+  top: 4px;
+  bottom: 4px;
+  left: 4px;
+  width: calc(50% - 4px);
+  background: var(--color-accent-soft);
+  border: 1px solid var(--color-accent);
+  border-radius: 999px;
+  transition: transform 200ms ease;
+}
+
+.thumbRight {
+  transform: translateX(100%);
+}
+
+.option {
+  position: relative;
+  z-index: 1;
+  border: none;
+  background: transparent;
+  padding: 10px 12px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-ink-muted);
+  cursor: pointer;
+  border-radius: 999px;
+  transition: color 150ms ease;
+}
+
+.optionActive {
+  color: var(--color-ink);
+}

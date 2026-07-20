@@ -1,0 +1,102 @@
+:root {
+  --color-bg: #060d14;
+
+  /* Glossy white glass — background for individual controls (buttons, pills,
+     cards, steppers, bubbles). The big form/result rectangles were removed,
+     so these small chips are the only surfaces left; they carry the glass look. */
+  --color-surface: rgba(255, 255, 255, 0.58);
+  --color-surface-sunken: rgba(255, 255, 255, 0.38);
+  --color-border: rgba(255, 255, 255, 0.55);
+  --color-border-strong: rgba(255, 255, 255, 0.75);
+
+  /* Text sitting directly on the photo (no card behind it) — stays light,
+     paired with --text-shadow-photo for legibility against a busy image. */
+  --color-text: #f7fafc;
+  --color-label: #dde8f0;
+  --color-text-faint: rgba(247, 250, 252, 0.4);
+
+  /* Text sitting on the light glass chips above — needs dark ink instead. */
+  --color-ink: #000000;
+  --color-ink-muted: #1f1f1f;
+
+  --color-accent: #4a9ebf;
+  --color-accent-soft: rgba(148, 205, 227, 0.55);
+
+  --color-gauge-low: #a63d5e;
+  --color-gauge-mid: #c9a227;
+  --color-gauge-high: #3e9e7a;
+
+  --font-serif: 'Source Serif 4', Georgia, 'Times New Roman', serif;
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+
+  --radius-md: 16px;
+  --radius-sm: 10px;
+
+  --shadow-soft: 0 8px 24px rgba(0, 0, 0, 0.28);
+  --shadow-inset: inset 0 0 0 1px var(--color-border);
+  --text-shadow-photo: 0 1px 10px rgba(0, 0, 0, 0.55), 0 1px 3px rgba(0, 0, 0, 0.4);
+
+  --card-backdrop-filter: blur(20px);
+
+  color-scheme: light;
+}
+
+@media (max-width: 768px) {
+  :root {
+    --color-surface: rgba(255, 255, 255, 0.88);
+    --card-backdrop-filter: none;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-sans);
+  font-size: 16px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-serif);
+  font-weight: 600;
+  margin: 0;
+  color: var(--color-text);
+}
+
+p {
+  margin: 0;
+}
+
+button {
+  font-family: inherit;
+}
+
+input {
+  font-family: inherit;
+}
+
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: 'tnum' 1;
+}
+
+::selection {
+  background: var(--color-accent-soft);
+}
