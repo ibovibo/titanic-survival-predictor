@@ -17,19 +17,21 @@ export function ResultPanel({ percent, isLoading, isWaking, hasError, onRetry }:
     <div className={styles.panel}>
       <Gauge percent={percent} isLoading={isLoading} />
 
-      {hasError ? (
-        <div className={styles.errorBox}>
-          <p className={styles.errorTitle}>{t.errorTitle}</p>
-          <p className={styles.errorBody}>{t.errorBody}</p>
-          <button type="button" className={styles.retryButton} onClick={onRetry}>
-            {t.retry}
-          </button>
-        </div>
-      ) : isWaking ? (
-        <p className={styles.waking}>{t.waking}</p>
-      ) : percent !== null ? (
-        <p className={`${styles.sentence} tabular-nums`}>{t.resultSentence(String(Math.round(percent)))}</p>
-      ) : null}
+      <div className={styles.content}>
+        {hasError ? (
+          <div className={styles.errorBox}>
+            <p className={styles.errorTitle}>{t.errorTitle}</p>
+            <p className={styles.errorBody}>{t.errorBody}</p>
+            <button type="button" className={styles.retryButton} onClick={onRetry}>
+              {t.retry}
+            </button>
+          </div>
+        ) : isWaking ? (
+          <p className={styles.waking}>{t.waking}</p>
+        ) : percent !== null ? (
+          <p className={`${styles.sentence} tabular-nums`}>{t.resultSentence(String(Math.round(percent)))}</p>
+        ) : null}
+      </div>
     </div>
   )
 }

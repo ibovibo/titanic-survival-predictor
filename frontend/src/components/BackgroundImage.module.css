@@ -3,6 +3,9 @@
   inset: 0;
   z-index: 0;
   overflow: hidden;
+  /* Forces its own compositing layer — without this, mobile browsers (iOS
+     Safari especially) can let a "fixed" background drift during scroll. */
+  transform: translateZ(0);
 }
 
 .photo {
@@ -11,7 +14,8 @@
   background-image: url('/gemifoto.avif');
   background-size: cover;
   background-position: center;
-  background-attachment: fixed;
+  /* No background-attachment: fixed — unreliable on mobile browsers, and
+     unnecessary since .layer itself is already pinned to the viewport. */
   filter: saturate(0.85);
 }
 

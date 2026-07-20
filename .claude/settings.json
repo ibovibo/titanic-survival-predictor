@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(node mobile-row-check.js)",
+      "Bash(node fixed-check.js)",
+      "Bash(node pixel-check.js)",
+      "Bash(node mobile-row-success.js)",
+      "Bash(sed -i '' 's/waitForTimeout\\(3000\\)/waitForTimeout\\(6000\\)/' mobile-row-success.js)",
+      "Bash(node debug-network.js)",
+      "Bash(node raw-fetch-check.js)",
+      "Bash(pkill -f raw-fetch-check.js)"
+    ]
+  }
+}

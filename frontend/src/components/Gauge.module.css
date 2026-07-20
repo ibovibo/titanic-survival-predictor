@@ -77,12 +77,13 @@
 
 @media (max-width: 899px) {
   .wrap {
-    width: 150px;
-    height: 150px;
+    width: 104px;
+    height: 104px;
+    flex-shrink: 0;
   }
 
   .percent,
   .percentDash {
-    font-size: 30px;
+    font-size: 22px;
   }
 }
